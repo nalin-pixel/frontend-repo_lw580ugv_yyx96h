@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Sparkles, FolderKanban, Mail } from 'lucide-react';
+import { profile } from '../data/profile';
 
 const items = [
   { href: '#home', label: 'Home', icon: Home },
   { href: '#skills', label: 'Skills', icon: Sparkles },
   { href: '#projects', label: 'Projects', icon: FolderKanban },
-  { href: 'mailto:hello@example.com', label: 'Email', icon: Mail },
+  { href: `mailto:${profile.email}`, label: 'Email', icon: Mail },
 ];
 
 export default function FloatingDock() {

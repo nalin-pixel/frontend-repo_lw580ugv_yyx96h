@@ -1,23 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, Code, Palette, Cpu } from 'lucide-react';
+import { profile } from '../data/profile';
 
-const skills = [
-  {
-    icon: <Code className="h-5 w-5" />, title: 'Frontend', items: ['React', 'Vite', 'Tailwind', 'Framer Motion']
-  },
-  {
-    icon: <Cpu className="h-5 w-5" />, title: 'Backend', items: ['FastAPI', 'MongoDB', 'REST APIs']
-  },
-  {
-    icon: <Palette className="h-5 w-5" />, title: 'Design', items: ['Figma', 'Spline', 'UX Writing']
-  },
-  {
-    icon: <Rocket className="h-5 w-5" />, title: 'DevOps', items: ['GitHub', 'CI', 'Cloud Deploy']
-  },
-];
+const iconMap = {
+  Frontend: <Code className="h-5 w-5" />,
+  Backend: <Cpu className="h-5 w-5" />,
+  Design: <Palette className="h-5 w-5" />,
+  DevOps: <Rocket className="h-5 w-5" />,
+};
 
 export default function SkillsGrid() {
+  const skills = profile.skills;
   return (
     <section id="skills" className="container mx-auto max-w-6xl px-4 py-20">
       <motion.h2
@@ -40,7 +34,7 @@ export default function SkillsGrid() {
             className="rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm backdrop-blur-md transition hover:shadow-md dark:border-white/10 dark:bg-white/5"
           >
             <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600/90 to-cyan-500/90 text-white">
-              {card.icon}
+              {iconMap[card.title] ?? <Code className="h-5 w-5" />}
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">{card.title}</h3>
             <ul className="mt-2 space-y-1 text-sm text-neutral-700 dark:text-neutral-300">

@@ -1,29 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Star } from 'lucide-react';
-
-const projects = [
-  {
-    title: '3D Hero Playground',
-    desc: 'Interactive Spline scene with smooth motion and responsive layout.',
-    link: '#',
-    repo: '#'
-  },
-  {
-    title: 'Portfolio Engine',
-    desc: 'Reusable components, theme system, and animated sections.',
-    link: '#',
-    repo: '#'
-  },
-  {
-    title: 'Motion Toolkit',
-    desc: 'Micro-interactions, staggered reveals, and dock navigation.',
-    link: '#',
-    repo: '#'
-  },
-];
+import { profile } from '../data/profile';
 
 export default function Portfolio() {
+  const projects = profile.projects;
   return (
     <section id="projects" className="container mx-auto max-w-6xl px-4 py-20">
       <motion.h2
@@ -52,10 +33,10 @@ export default function Portfolio() {
             <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">{p.title}</h3>
             <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">{p.desc}</p>
             <div className="mt-4 flex items-center gap-2">
-              <a href={p.link} className="inline-flex items-center gap-1 rounded-full bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 dark:bg-white dark:text-neutral-900">
+              <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 dark:bg-white dark:text-neutral-900">
                 Live <ExternalLink className="h-3.5 w-3.5" />
               </a>
-              <a href={p.repo} className="inline-flex items-center gap-1 rounded-full border border-neutral-200/70 bg-white/80 px-3 py-1.5 text-xs font-medium text-neutral-800 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-neutral-100">
+              <a href={p.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-neutral-200/70 bg-white/80 px-3 py-1.5 text-xs font-medium text-neutral-800 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-neutral-100">
                 Code <Github className="h-3.5 w-3.5" />
               </a>
             </div>
@@ -72,7 +53,7 @@ export default function Portfolio() {
       >
         <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Have an idea?</h3>
         <p className="mt-2 text-neutral-700 dark:text-neutral-300">I love building playful, interactive experiences. Let’s collaborate!</p>
-        <a href="mailto:hello@example.com" className="mt-4 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700">
+        <a href={`mailto:${profile.email}`} className="mt-4 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700">
           Get in touch
         </a>
       </motion.div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
+import { profile } from '../data/profile';
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="font-display text-4xl font-extrabold tracking-tight text-neutral-900 drop-shadow-sm dark:text-neutral-50 md:text-6xl"
         >
-          Playful Portfolio for a Creative Developer
+          {profile.hero.title}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +28,7 @@ export default function Hero() {
           transition={{ delay: 0.15, duration: 0.6 }}
           className="mt-4 max-w-2xl text-base text-neutral-700 dark:text-neutral-300 md:text-lg"
         >
-          Smooth animations, a floating dock, and an interactive 3D hero. Built with React, Tailwind, Framer Motion, and Spline.
+          {profile.hero.subtitle}
         </motion.p>
 
         <motion.div
