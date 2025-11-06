@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import SkillsGrid from './components/SkillsGrid.jsx';
 import Portfolio from './components/Portfolio.jsx';
+import FloatingDock from './components/FloatingDock.jsx';
 
 const data = {
   name: 'Anuj Prasad',
@@ -107,6 +108,7 @@ export default function App() {
           achievements={data.certifications_achievements}
         />
       </main>
+      <FloatingDock />
       <footer className="py-10 text-center text-sm opacity-70">
         © {new Date().getFullYear()} {data.name}. Built with love, React, and a splash of 3D.
       </footer>

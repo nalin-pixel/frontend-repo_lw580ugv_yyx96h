@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 
 function Card({ children, className = '' }) {
   return (
-    <div className={`rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white/60 dark:bg-slate-900/60 backdrop-blur ${className}`}>
+    <div className={`rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/70 backdrop-blur ${className}`}>
       {children}
     </div>
   );
@@ -12,12 +12,12 @@ function Card({ children, className = '' }) {
 
 export default function Portfolio({ education, projects, achievements }) {
   return (
-    <section className="py-16 sm:py-20">
+    <section id="projects" className="py-16 sm:py-20">
       <div className="grid lg:grid-cols-2 gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
@@ -61,7 +61,7 @@ export default function Portfolio({ education, projects, achievements }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="space-y-6"
         >
@@ -69,8 +69,8 @@ export default function Portfolio({ education, projects, achievements }) {
             <h3 className="text-xl font-semibold mb-4">Projects</h3>
             <ul className="space-y-6">
               {projects.map((p) => (
-                <li key={p.name}>
-                  <div className="font-medium">{p.name}</div>
+                <li key={p.name} className="group">
+                  <div className="font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{p.name}</div>
                   <ul className="list-disc ml-5 mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-300">
                     {p.description.map((d, idx) => (
                       <li key={idx}>{d}</li>
@@ -90,7 +90,7 @@ export default function Portfolio({ education, projects, achievements }) {
               </p>
               <a
                 href="mailto:anujprasad.nitjsr@gmail.com?subject=Let%E2%80%99s%20work%20together&body=Hi%20Anuj%2C%20I%27d%20love%20to%20chat%20about..."
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-2.5 shadow hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-2.5 shadow hover:opacity-90 transition"
               >
                 Get in touch
               </a>
